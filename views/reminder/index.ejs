@@ -1,0 +1,29 @@
+
+<div class="container">
+  <br>
+  <br>
+  <% include ../partials/navbar %>
+  <div class="formborder">
+    <h1 class="page-header"><strong>Current Reminders</strong></h1>
+  
+    <ul class="list-group">
+      <% reminders.forEach(function (reminderItem) { %>
+        <li class="list-group-item">
+          <strong><%= reminderItem.title %>: </strong>
+          <%= reminderItem.description %>
+          <% if (typeof(reminderItem.dueDate) !== 'undefined') { %>
+            || Due: <%= reminderItem.dueDate %>
+          <% } %>
+          || Phone: <%= reminderItem.phone %>
+          || Completed:
+          <% if (reminderItem.completed == true) { %>
+            <span class="badge badge-success">True</span>
+          <% } else if (reminderItem.completed === false) { %>
+            <span class="badge badge-danger">False</span>
+          <% } %> ==>>
+          <a class="badge badge-info" href=<%= "/reminder/" + reminderItem.id %>>View</a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>
