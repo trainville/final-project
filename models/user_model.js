@@ -8,6 +8,22 @@ const userModel = {
         }
         return null;
     },
+
+    addLocaluser: (email, password) => {
+        for (const id in database) {
+            if (database[id].email === email) {
+                return "user already exists";
+            }
+        }
+        database[Object.keys(database).length + 1] = {
+            email: email, src: "local", password: password,
+            reminders: [
+            ],
+            friends: [],
+        }
+        console.log(database)
+    },
+
     getUserById: (id) => {
         u = database[id];
         if (u) {
@@ -21,7 +37,7 @@ const userModel = {
     
     getFriendsById: (id) => {
         u = database[id];
-        if (typeof(u.friends) !== 'undefined' && Array.isArray(u.friends)) {
+        if (typeof (u.friends) !== 'undefined' && Array.isArray(u.friends)) {
             return u.friends.map(userModel.getUserById);
         }
         return null;

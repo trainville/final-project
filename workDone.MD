@@ -278,3 +278,25 @@ Mar 26 2021
                 fising phone number display
 
 (Terry) Found an error in the delete function
+
+
+
+Mar 27 2021
+
+(Terry) Transfered Jason's work to-date to this document
+
+(Jason) Fixed the reminder id issue. Thanks Terry
+
+(Jason) Display friends' reminders on the reminder list page, will not show tags and subtasks
+
+(Jason) Display tags (list page, list one page)
+
+(Jason) Display subtasks (summary on list page, details on list one page)
+
+(Jason) Completed user registration
+
+(Jason) Completed user logout
+
+(Terry) System Testing
+
+

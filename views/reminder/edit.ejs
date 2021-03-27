@@ -36,7 +36,17 @@
         <label for="dueDate">Due date</label>
         <input type="date" class="form-control" id="dueDate" name="dueDate" value=<%= reminderItem.dueDate %>>
       </div>
-    </div>
+  
+      <div class="form-group">
+        <label for="tags">Tags (comma seperated)</label>
+        <input type="text" name="tags" class="form-control" id="tagsInput" 
+          <% if (typeof(reminderItem.tags) !== 'undefined') { %>
+            value=<%= reminderItem.tags %>
+          <% } else { %>
+            value=""
+          <% } %>
+        >
+      </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>

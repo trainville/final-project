@@ -1,6 +1,7 @@
 require("dotenv").config();
-const morgan = require("morgan")
+
 const express = require("express");
+const morgan = require("morgan")
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const session = require("express-session");

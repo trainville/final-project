@@ -7,6 +7,7 @@ const authController = require("../controller/auth_controller");
 
 authRouter.get("/register", authController.register);
 authRouter.get("/login", authController.login);
+authRouter.get("/logout", authController.logout);
 
 // Terry
 authRouter.get("/facebook", authController.facebookAuthorize);
