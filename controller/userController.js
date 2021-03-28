@@ -1,4 +1,4 @@
-const userModel = require("../models/userModel").userModel;
+const userModel = require("../models/user_model");
 
 const getUserByEmailIdAndPassword = (email, password) => {
   let user = userModel.findOne(email);
@@ -26,7 +26,6 @@ const getUserByProfile = (profile) => {
   return null;
 };
 
-
 function isUserValid(user, password) {
   return user.password === password;
 }
@@ -34,5 +33,5 @@ function isUserValid(user, password) {
 module.exports = {
   getUserByEmailIdAndPassword,
   getUserById,
-  getUserByProfile
+  getUserByProfile,
 };
