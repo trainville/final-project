@@ -21,7 +21,6 @@ const userModel = {
             ],
             friends: [],
         }
-        console.log(database)
     },
 
     getUserById: (id) => {

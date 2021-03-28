@@ -40,14 +40,18 @@ const authController = {
   },
 
   registerSubmit: (req, res) => {
-    console.log("submit")
-    console.log(req.body);
-    err=userModel.addLocaluser(req.body.email, req.body.password);
-    if (err) {
+    if(req.body.password === req.body.verify_password){
+      err=userModel.addLocaluser(req.body.email, req.body.password);
+      if (err) {
+        req.flash('error', err);
+        res.redirect("/auth/register")
+      } else {
+        authController.loginSubmit(req,res)
+      }
+    }else{
+      let err = "Passwords Must Match | Please Try Again"
       req.flash('error', err);
       res.redirect("/auth/register")
-    } else {
-      authController.loginSubmit(req,res)
     }
   },
   

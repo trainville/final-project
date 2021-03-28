@@ -7,6 +7,7 @@ const remindersController = {
   list: (req, res) => {
     const user = userModel.getUserById(req.user.id);
     const reminders = reminderModel.getRemindersByUserId(req.user.id);
+    const friendsRemindersList = reminderModel.getFriendsRemindersList(req.user.id);
     res.render("reminder/index", { uname: user.uname, reminders: reminders, friendsRemindersList: friendsRemindersList });
   },
 
